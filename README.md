@@ -1,16 +1,22 @@
-# Cryptor
+# Cryptorjs
 Encrypt and decrypt string using a key
+
+# Installation
+
+```javascript
+npm install cryptorjs --save
+```
 
 # Example
 
 ```javascript
-const cryptor = require('cryptor');
+var cryptorjs = require('cryptorjs');
 
-const myCryptor = new cryptor('yourSecretKey')
-var secretMessage = myCryptor.encode('myExampleString');
-// => '903395757905e0645fdf3e168dc0b7'
+var myCryptor = new cryptorjs('yourSecretKey');
+var encoded = myCryptor.encode('myExampleString');
+// => '37d8e07a3dddc2971f3e53b1021f51'
 
-var decodedMessage = myCryptor.decode('903395757905e0645fdf3e168dc0b7');
+var decoded = myCryptor.decode('37d8e07a3dddc2971f3e53b1021f51');
 // => 'myExampleString'
 
 ```

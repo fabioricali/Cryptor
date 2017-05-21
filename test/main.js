@@ -8,7 +8,7 @@ describe('encode and decode', function () {
 
     it('should be equal', function () {
         let origin = 'myExampleString';
-        let myCryptor = new cryptor('ah293nc780ew');
+        let myCryptor = new cryptor('yourSecretKey');
         let encoded = myCryptor.encode(origin);
         let decoded = myCryptor.decode(encoded);
 
