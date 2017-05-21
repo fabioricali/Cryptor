@@ -1,0 +1,35 @@
+{
+  "name": "cryptor",
+  "version": "1.0.0",
+  "description": "Encrypt and decrypt string using a key",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fabioricali/cryptor.git"
+  },
+  "keywords": [
+    "encrypt",
+    "decrypt",
+    "string",
+    "crypto",
+    "hash",
+    "password",
+    "passkey",
+    "algorithm"
+  ],
+  "author": "Fabio Ricali",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/fabioricali/cryptor/issues"
+  },
+  "homepage": "https://github.com/fabioricali/cryptor#readme",
+  "devDependencies": {
+    "mocha": "^3.4.1"
+  }
+}
