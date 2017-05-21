@@ -1,5 +1,5 @@
 {
-  "name": "cryptor",
+  "name": "cryptorjs",
   "version": "1.0.0",
   "description": "Encrypt and decrypt string using a key",
   "main": "index.js",
