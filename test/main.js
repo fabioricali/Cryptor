@@ -17,9 +17,17 @@ describe('encode and decode', function () {
         assert.equal(origin, decoded);
     });
 
-    it('should be error', function (done) {
+    it('should be error if key missing', function (done) {
         try{
             new cryptor()
+        }catch (error) {
+            done();
+        }
+    });
+
+    it('should be error if key is empty', function (done) {
+        try{
+            new cryptor('')
         }catch (error) {
             done();
         }

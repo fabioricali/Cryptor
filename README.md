@@ -1,4 +1,4 @@
-# Cryptorjs
+# Cryptorjs [![Build Status](https://travis-ci.org/fabioricali/Cryptor.svg?branch=master)](https://travis-ci.org/fabioricali/Cryptor)
 Encrypt and decrypt string using a key
 
 # Installation
