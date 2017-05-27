@@ -14,7 +14,7 @@ class Cryptor {
      * @param key
      * @param algorithm
      */
-    constructor(key, algorithm){
+    constructor(key, algorithm = 'aes-256-ctr'){
 
         if(typeof key === 'undefined')
             throw new Error('required key');
@@ -22,7 +22,7 @@ class Cryptor {
         if(key === '')
             throw new Error('key cannot be empty');
 
-        this.algorithm = algorithm || 'aes-256-ctr';
+        this.algorithm = algorithm;
         this.key = key;
     }
 
