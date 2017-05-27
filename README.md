@@ -1,5 +1,5 @@
 # Cryptorjs [![Build Status](https://travis-ci.org/fabioricali/Cryptor.svg?branch=master)](https://travis-ci.org/fabioricali/Cryptor)
-Encrypt and decrypt string using a key
+Simple library for encryption and decryption of string using a key
 
 # Installation
 
@@ -13,6 +13,7 @@ npm install cryptorjs --save
 var cryptorjs = require('cryptorjs');
 
 var myCryptor = new cryptorjs('yourSecretKey');
+
 var encoded = myCryptor.encode('myExampleString');
 // => '37d8e07a3dddc2971f3e53b1021f51'
 

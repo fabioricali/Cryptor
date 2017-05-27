@@ -34,3 +34,11 @@ describe('encode and decode', function () {
     });
 
 });
+
+describe('get algorithms', function () {
+    it('should be array', function () {
+        let algorithms = cryptor.getAlgorithms();
+        console.log(algorithms);
+        assert.equal(typeof algorithms, 'object');
+    })
+});

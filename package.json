@@ -21,7 +21,8 @@
     "hash",
     "password",
     "passkey",
-    "algorithm"
+    "algorithm",
+    "secret"
   ],
   "author": "Fabio Ricali",
   "license": "GPL-3.0",

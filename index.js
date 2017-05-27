@@ -33,9 +33,7 @@ class Cryptor {
      */
     encode(str) {
         let cipher = crypto.createCipher(this.algorithm, this.key);
-        let crypted = cipher.update(str, 'utf8', 'hex');
-        crypted += cipher.final('hex');
-        return crypted;
+        return cipher.update(str, 'utf8', 'hex') + cipher.final('hex');
     }
 
     /**
@@ -45,9 +43,15 @@ class Cryptor {
      */
     decode(str) {
         let decipher = crypto.createDecipher(this.algorithm, this.key);
-        let dec = decipher.update(str, 'hex', 'utf8');
-        dec += decipher.final('utf8');
-        return dec;
+        return decipher.update(str, 'hex', 'utf8') + decipher.final('utf8');
+    }
+
+    /**
+     * Get available algorithms
+     * @returns {*}
+     */
+    static getAlgorithms(){
+        return crypto.getCiphers();
     }
 }
 
