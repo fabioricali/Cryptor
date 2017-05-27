@@ -33,11 +33,22 @@ describe('encode and decode', function () {
         }
     });
 
+    it('should be equal with "blowfish" cipher', function () {
+        let origin = 'myExampleString';
+        let myCryptor = new cryptor('yourSecretKey', 'blowfish');
+        let encoded = myCryptor.encode(origin);
+        let decoded = myCryptor.decode(encoded);
+
+        console.log(origin, encoded, decoded);
+
+        assert.equal(origin, decoded);
+    });
+
 });
 
 describe('get algorithms', function () {
     it('should be array', function () {
-        let algorithms = cryptor.getAlgorithms();
+        let algorithms = cryptor.getCiphers();
         console.log(algorithms);
         assert.equal(typeof algorithms, 'object');
     })

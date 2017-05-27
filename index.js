@@ -29,7 +29,7 @@ class Cryptor {
     /**
      * Encode string
      * @param str
-     * @returns {*}
+     * @return {string}
      */
     encode(str) {
         let cipher = crypto.createCipher(this.algorithm, this.key);
@@ -39,7 +39,7 @@ class Cryptor {
     /**
      * Decode string
      * @param str
-     * @returns {*}
+     * @return {string}
      */
     decode(str) {
         let decipher = crypto.createDecipher(this.algorithm, this.key);
@@ -47,10 +47,10 @@ class Cryptor {
     }
 
     /**
-     * Get available algorithms
-     * @returns {*}
+     * Get available ciphers
+     * @return {array}
      */
-    static getAlgorithms(){
+    static getCiphers(){
         return crypto.getCiphers();
     }
 }
