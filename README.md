@@ -1,4 +1,4 @@
-# Cryptorjs [![Build Status](https://travis-ci.org/fabioricali/Cryptor.svg?branch=master)](https://travis-ci.org/fabioricali/Cryptor)
+# Cryptorjs [![Build Status](https://travis-ci.org/fabioricali/Cryptor.svg?branch=master)](https://travis-ci.org/fabioricali/Cryptor) [![codecov](https://codecov.io/gh/fabioricali/Cryptor/branch/master/graph/badge.svg)](https://codecov.io/gh/fabioricali/Cryptor)
 Simple library for encryption and decryption of string using a key
 
 # Installation
