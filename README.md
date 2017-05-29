@@ -1,5 +1,7 @@
-# Cryptorjs [![Build Status](https://travis-ci.org/fabioricali/Cryptor.svg?branch=master)](https://travis-ci.org/fabioricali/Cryptor) [![Coverage Status](https://coveralls.io/repos/github/fabioricali/Cryptor/badge.svg)](https://coveralls.io/github/fabioricali/Cryptor)
+# Cryptorjs 
 Simple library for encryption and decryption of string using a key
+
+[![Build Status](https://travis-ci.org/fabioricali/Cryptor.svg?branch=master)](https://travis-ci.org/fabioricali/Cryptor) [![Coverage Status](https://coveralls.io/repos/github/fabioricali/Cryptor/badge.svg)](https://coveralls.io/github/fabioricali/Cryptor)
 
 # Installation
 
