@@ -3,13 +3,13 @@ Simple library for encryption and decryption of string using a key
 
 [![Build Status](https://travis-ci.org/fabioricali/Cryptor.svg?branch=master)](https://travis-ci.org/fabioricali/Cryptor) [![Coverage Status](https://coveralls.io/repos/github/fabioricali/Cryptor/badge.svg)](https://coveralls.io/github/fabioricali/Cryptor)
 
-# Installation
+## Installation
 
 ```javascript
 npm install cryptorjs --save
 ```
 
-# Example
+## Example
 ### Basic
 ```javascript
 var cryptorjs = require('cryptorjs');
@@ -53,3 +53,9 @@ cryptorjs.getCiphers();
         'aes-128-cfb8',...]
         */
 ```
+
+## License
+Cryptorjs is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+
+## Author
+[Fabio Ricali](http://rica.li)
