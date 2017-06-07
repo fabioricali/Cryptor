@@ -5,6 +5,37 @@
 const crypto = require('crypto');
 
 /**
+ * Normalize string
+ * @param str
+ * @returns {*}
+ */
+function normalizeInput(str) {
+    if(str === null || typeof str === 'undefined')
+        throw new Error('required origin');
+
+    if(typeof str === 'object')
+        str = JSON.stringify(str);
+
+    if(typeof str !== 'string')
+        str = str.toString();
+
+    return str;
+}
+
+/**
+ * If is JSON string then parse
+ * @param str
+ * @returns {*}
+ */
+function normalizeOutput(str) {
+    try {
+        return JSON.parse(str);
+    } catch (e) {
+        return str;
+    }
+}
+
+/**
  * Cryptor class
  */
 class Cryptor {
@@ -32,6 +63,7 @@ class Cryptor {
      * @return {string}
      */
     encode(str) {
+        str = normalizeInput(str);
         let cipher = crypto.createCipher(this.algorithm, this.key);
         return cipher.update(str, 'utf8', 'hex') + cipher.final('hex');
     }
@@ -42,8 +74,10 @@ class Cryptor {
      * @return {string}
      */
     decode(str) {
+        str = normalizeInput(str);
         let decipher = crypto.createDecipher(this.algorithm, this.key);
-        return decipher.update(str, 'hex', 'utf8') + decipher.final('utf8');
+        let decoded = decipher.update(str, 'hex', 'utf8') + decipher.final('utf8');
+        return normalizeOutput(decoded);
     }
 
     /**
@@ -56,3 +90,6 @@ class Cryptor {
 }
 
 module.exports = Cryptor;
+
+module.exports._normalizeInput = normalizeInput;
+module.exports._normalizeOutput = normalizeOutput;
