@@ -1,5 +1,5 @@
 # Cryptorjs 
-Simple library for encryption and decryption of string using a key
+Simple library for encryption and decryption of string, number and object using a key
 
 [![Build Status](https://travis-ci.org/fabioricali/Cryptor.svg?branch=master)](https://travis-ci.org/fabioricali/Cryptor) [![Coverage Status](https://coveralls.io/repos/github/fabioricali/Cryptor/badge.svg)](https://coveralls.io/github/fabioricali/Cryptor)
 
@@ -21,6 +21,18 @@ var encoded = myCryptor.encode('myExampleString');
 
 var decoded = myCryptor.decode('37d8e07a3dddc2971f3e53b1021f51');
 // => 'myExampleString'
+```
+### Object encryption
+```javascript
+var cryptorjs = require('cryptorjs');
+
+var myCryptor = new cryptorjs('yourSecretKey');
+
+var encoded = myCryptor.encode({ a: 1, b: 2 });
+// => '2183c42066819ed9184f1df116'
+
+var decoded = myCryptor.decode('2183c42066819ed9184f1df116');
+// => { a: 1, b: 2 }
 ```
 
 ### With a cipher

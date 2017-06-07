@@ -1,7 +1,7 @@
 {
   "name": "cryptorjs",
   "version": "1.0.5",
-  "description": "Encrypt and decrypt string using a key",
+  "description": "Encrypt and decrypt string, number and object using a key",
   "main": "index.js",
   "directories": {
     "test": "test"
@@ -22,7 +22,9 @@
     "password",
     "passkey",
     "algorithm",
-    "secret"
+    "secret",
+    "json",
+    "object"
   ],
   "author": "Fabio Ricali",
   "license": "MIT",

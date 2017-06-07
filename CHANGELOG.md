@@ -9,3 +9,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - CHANGELOG.md
 - Support to encrypt object
 
+### Fixed
+- Some bug
+
