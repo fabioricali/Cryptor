@@ -66,6 +66,19 @@ cryptorjs.getCiphers();
         */
 ```
 
+### MD5 and SHA1 helpers
+```javascript
+var cryptorjs = require('cryptorjs');
+
+cryptorjs.md5('ciao');
+
+/*=> '6e6bc4e49dd477ebc98ef4046c067b5f'*/
+
+cryptorjs.sha1('ciao');
+
+/*=> '1e4e888ac66f8dd41e00c5a7ac36a32a9950d271'*/
+```
+
 ## License
 Cryptorjs is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
 
