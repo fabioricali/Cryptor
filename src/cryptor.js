@@ -16,7 +16,6 @@ class Cryptor {
      * @param algorithm
      */
     constructor(key, algorithm = 'aes-256-ctr'){
-
         if(typeof key === 'undefined')
             throw new Error('required key');
 
@@ -56,6 +55,24 @@ class Cryptor {
      */
     static getCiphers(){
         return crypto.getCiphers();
+    }
+
+    /**
+     * MD5 hash
+     * @param str
+     * @returns {*}
+     */
+    static md5(str){
+        return crypto.createHash('md5').update(str).digest('hex');
+    }
+
+    /**
+     * SHA1 hash
+     * @param str
+     * @returns {*}
+     */
+    static sha1(str){
+        return crypto.createHash('sha1').update(str).digest('hex');
     }
 }
 

@@ -149,4 +149,19 @@ describe('helper function', function () {
             assert.deepEqual(result, JSON.parse(origin));
         });
     });
+
+    describe('hash helper', function () {
+        it('should be return md5 hash', function () {
+            let origin = 'ciao';
+            let result = cryptor.md5(origin);
+            console.log(origin, result);
+            assert.equal(result, '6e6bc4e49dd477ebc98ef4046c067b5f');
+        });
+        it('should be return sha1 hash', function () {
+            let origin = 'ciao';
+            let result = cryptor.sha1(origin);
+            console.log(origin, result);
+            assert.equal(result, '1e4e888ac66f8dd41e00c5a7ac36a32a9950d271');
+        });
+    });
 });
