@@ -163,5 +163,11 @@ describe('helper function', function () {
             console.log(origin, result);
             assert.equal(result, '1e4e888ac66f8dd41e00c5a7ac36a32a9950d271');
         });
+        it('should be return sha512 hash', function () {
+            let origin = 'ciao';
+            let result = cryptor.sha512(origin);
+            console.log(origin, result);
+            assert.equal(result, 'a0c299b71a9e59d5ebb07917e70601a3570aa103e99a7bb65a58e780ec9077b1902d1dedb31b1457beda595fe4d71d779b6ca9cad476266cc07590e31d84b206');
+        });
     });
 });

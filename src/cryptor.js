@@ -74,7 +74,15 @@ class Cryptor {
     static sha1(str){
         return crypto.createHash('sha1').update(str).digest('hex');
     }
+
+    /**
+     * SHA512 hash
+     * @param str
+     * @returns {*}
+     */
+    static sha512(str){
+        return crypto.createHash('sha512').update(str).digest('hex');
+    }
 }
 
 module.exports = Cryptor;
-
