@@ -4,6 +4,7 @@
 'use strict';
 const crypto = require('crypto');
 const helper = require('./helper');
+const deprecate = require('depreca');
 
 /**
  * Cryptor class
@@ -58,11 +59,21 @@ class Cryptor {
     }
 
     /**
+     * Get available hashes
+     * @return {array}
+     */
+    static getHashes(){
+        return crypto.getHashes();
+    }
+
+    /**
      * MD5 hash
      * @param str
      * @returns {*}
+     * @deprecated
      */
     static md5(str){
+        deprecate('md5 is deprecated, use hash method instead. e.g. hash("your string", "md5")');
         return crypto.createHash('md5').update(str).digest('hex');
     }
 
@@ -70,9 +81,25 @@ class Cryptor {
      * SHA1 hash
      * @param str
      * @returns {*}
+     * @deprecated
      */
     static sha1(str){
+        deprecate('sha1 is deprecated, use hash method instead. e.g. hash("your string", "sha1")');
         return crypto.createHash('sha1').update(str).digest('hex');
+    }
+
+    /**
+     * Creates hash of an string based on available hashes of platform
+     * @param str
+     * @param hash
+     * @returns {*}
+     */
+    static hash(str, hash){
+        if(Cryptor.getHashes().indexOf(hash) !== -1){
+            return crypto.createHash(hash).update(str).digest('hex');
+        } else {
+            throw new Error('hash ' + hash + ' not found in your platform')
+        }
     }
 }
 

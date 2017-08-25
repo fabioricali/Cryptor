@@ -3,7 +3,7 @@
  */
 const assert = require('assert');
 const cryptor = require('../index');
-const helper = require('../src/helper');
+const be = require('bejs');
 
 describe('encode and decode', function () {
 
@@ -100,68 +100,46 @@ describe('get algorithms', function () {
     })
 });
 
-describe('helper function', function () {
-    describe('normalizeInput', function () {
-        it('should be return equal string', function () {
-            let origin = 'hello';
-            let result = helper.normalizeInput(origin);
-            assert.equal(result, origin);
-        });
+describe('get hashes', function () {
+    it('should be array', function () {
+        let algorithms = cryptor.getHashes();
+        console.log(algorithms);
+        assert.equal(typeof algorithms, 'object');
+    })
+});
 
-        it('should be return equal json string', function () {
-            let origin = {a:1};
-            let result = helper.normalizeInput(origin);
-            assert.equal(result, JSON.stringify(origin));
-        });
-
-        it('should be return equal number', function () {
-            let origin = 100;
-            let result = helper.normalizeInput(origin);
-            assert.equal(result, origin);
-            assert.strictEqual(Number(result), origin);
-        });
-
-        it('should be return error if null', function (done) {
-            try {
-                helper.normalizeInput(null);
-            } catch (e) {
-                done();
-            }
-        });
-        it('should be return error if undefined', function (done) {
-            try {
-                helper.normalizeInput();
-            } catch (e) {
-                done();
-            }
-        });
+describe('hash', function () {
+    it('should be return true', function () {
+        let hash = cryptor.hash('hello', 'sha512');
+        console.log(hash);
+        be.err.sha512(hash);
     });
-
-    describe('normalizeOutput', function () {
-        it('should be return equal string', function () {
-            let origin = 'test';
-            let result = helper.normalizeOutput(origin);
-            assert.equal(result, origin);
-        });
-        it('should be return equal object', function () {
-            let origin = '{"a":1}';
-            let result = helper.normalizeOutput(origin);
-            assert.deepEqual(result, JSON.parse(origin));
-        });
+    it('should be return false', function () {
+        let hash = cryptor.hash('hello', 'sha256');
+        console.log(hash);
+        be.err.not.sha512(hash);
     });
+    it('should be return error', function (done) {
+        try {
+            cryptor.hash('hello', 'sha256444');
+        } catch (e) {
+            console.log(e.message);
+            done()
+        }
+    });
+});
 
-    describe('hash helper', function () {
-        it('should be return md5 hash', function () {
-            let origin = 'ciao';
-            let result = cryptor.md5(origin);
-            console.log(origin, result);
-            assert.equal(result, '6e6bc4e49dd477ebc98ef4046c067b5f');
-        });
-        it('should be return sha1 hash', function () {
-            let origin = 'ciao';
-            let result = cryptor.sha1(origin);
-            console.log(origin, result);
-            assert.equal(result, '1e4e888ac66f8dd41e00c5a7ac36a32a9950d271');
-        });
+describe('hash helper', function () {
+    it('should be return md5 hash', function () {
+        let origin = 'ciao';
+        let result = cryptor.md5(origin);
+        console.log(origin, result);
+        assert.equal(result, '6e6bc4e49dd477ebc98ef4046c067b5f');
+    });
+    it('should be return sha1 hash', function () {
+        let origin = 'ciao';
+        let result = cryptor.sha1(origin);
+        console.log(origin, result);
+        assert.equal(result, '1e4e888ac66f8dd41e00c5a7ac36a32a9950d271');
     });
 });
