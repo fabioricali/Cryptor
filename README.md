@@ -76,6 +76,7 @@ Create an hash using available hashes in your platform
 ```javascript
 var cryptorjs = require('cryptorjs');
 
+// Check if exists MD5 hash
 console.log(cryptorjs.getHashes().includes('md5')); //=> true
 
 cryptorjs.hash('ciao', 'md5');
