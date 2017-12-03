@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [2.1.0] - 2017-12-03
 - Added static method `hasHash`
+- Minor fix
 
 ## [2.0.2] - 2017-08-25
 - Added static method `hash`
