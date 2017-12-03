@@ -101,6 +101,15 @@ class Cryptor {
             throw new Error('hash ' + hash + ' not found in your platform')
         }
     }
+
+    /**
+     * Check if hash exists
+     * @param hash
+     * @returns {boolean}
+     */
+    static hasHash(hash){
+        return Cryptor.getHashes().indexOf(hash) !== -1;
+    }
 }
 
 module.exports = Cryptor;
