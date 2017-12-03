@@ -129,6 +129,19 @@ describe('hash', function () {
     });
 });
 
+describe('hasHash', function () {
+    it('should be return true', function () {
+        let result = cryptor.hasHash('sha512');
+        console.log(result);
+        be.err.true(result);
+    });
+    it('should be return false', function () {
+        let result = cryptor.hasHash('foooo');
+        console.log(result);
+        be.err.false(result);
+    });
+});
+
 describe('hash helper', function () {
     it('should be return md5 hash', function () {
         let origin = 'ciao';
