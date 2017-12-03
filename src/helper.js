@@ -1,7 +1,7 @@
 /**
  * Created by Fabio on 07/06/2017.
  */
-const crypto = require('crypto');
+'use strict';
 
 /**
  * Helper class
