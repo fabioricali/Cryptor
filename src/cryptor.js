@@ -95,7 +95,7 @@ class Cryptor {
      * @returns {*}
      */
     static hash(str, hash){
-        if(Cryptor.getHashes().indexOf(hash) !== -1){
+        if(Cryptor.hasHash(hash)){
             return crypto.createHash(hash).update(str).digest('hex');
         } else {
             throw new Error('hash ' + hash + ' not found in your platform')
