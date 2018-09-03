@@ -41,16 +41,16 @@ var decoded = myCryptor.decode('2183c42066819ed9184f1df116');
 ```
 
 ### With a cipher
-For example using "blowfish" cipher
+For example using "camellia-256-cfb1" cipher
 ```javascript
 var cryptorjs = require('cryptorjs');
 
-var myCryptor = new cryptorjs('yourSecretKey', 'blowfish');
+var myCryptor = new cryptorjs('yourSecretKey', 'camellia-256-cfb1');
 
 var encoded = myCryptor.encode('myExampleString');
-// => 'd21c35352099eac53a129a414530c162'
+// => 'ac3277ba5c3f433d6b7ea70979fe55'
 
-var decoded = myCryptor.decode('d21c35352099eac53a129a414530c162');
+var decoded = myCryptor.decode('ac3277ba5c3f433d6b7ea70979fe55');
 // => 'myExampleString'
 ```
 
@@ -87,6 +87,23 @@ cryptorjs.hash('ciao', 'sha1');
 
 /*=> '1e4e888ac66f8dd41e00c5a7ac36a32a9950d271'*/
 ```
+
+### Supported ciphers (since 3.0.0)
+- aes-256-cbc
+- aes-256-cbc-hmac-sha1
+- aes-256-cbc-hmac-sha256
+- aes-256-cfb
+- aes-256-cfb1
+- aes-256-cfb8
+- aes-256-ctr
+- aes-256-ofb
+- aes256
+- camellia-256-cbc
+- camellia-256-cfb
+- camellia-256-cfb1
+- camellia-256-cfb8
+- camellia-256-ofb
+- camellia256
 
 ## License
 Cryptorjs is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)

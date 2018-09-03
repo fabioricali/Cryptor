@@ -30,7 +30,7 @@ describe('encode and decode', function () {
     });
 
     it('should be equal using a object', function () {
-        let origin = {a:1,b:2};
+        let origin = {a: 1, b: 2};
         let myCryptor = new cryptor('yourSecretKey');
         let encoded = myCryptor.encode(origin);
         let decoded = myCryptor.decode(encoded);
@@ -58,36 +58,54 @@ describe('encode and decode', function () {
             let myCryptor = new cryptor('yourSecretKey');
             myCryptor.encode();
             myCryptor.decode();
-        }catch (error) {
+        } catch (error) {
             done();
         }
     });
 
     it('should be error if key missing', function (done) {
-        try{
+        try {
             new cryptor()
-        }catch (error) {
+        } catch (error) {
             done();
         }
     });
 
     it('should be error if key is empty', function (done) {
-        try{
+        try {
             new cryptor('')
-        }catch (error) {
+        } catch (error) {
             done();
         }
     });
 
-    it('should be equal with "blowfish" cipher', function () {
-        let origin = 'myExampleString';
-        let myCryptor = new cryptor('yourSecretKey', 'blowfish');
-        let encoded = myCryptor.encode(origin);
-        let decoded = myCryptor.decode(encoded);
+    it('should be equal with all cipher', function () {
+        const origin = 'myExampleString';
+        const okAlg = [];
+        const algorithms = cryptor.getCiphers();
+        algorithms.forEach(alg => {
+            try {
+                let myCryptor = new cryptor('yourSecretKey', alg);
+                let encoded = myCryptor.encode(origin);
+                let decoded = myCryptor.decode(encoded);
+                assert.equal(origin, decoded);
+                console.log('OK    -->', alg, encoded);
+                okAlg.push(alg);
+            } catch (e) {
+                console.log('ERROR -->', alg, e.message)
+            }
+        });
 
-        console.log(origin, encoded, decoded);
+        console.log(okAlg)
+    });
 
-        assert.equal(origin, decoded);
+    it('should be error, unsupported cipher', function (done) {
+        try {
+            new cryptor('yourSecretKey', 'aes-128-cbc');
+        } catch (e) {
+            console.log(e);
+            done();
+        }
     });
 
 });

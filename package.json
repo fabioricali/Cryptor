@@ -11,7 +11,8 @@
     "version:minor": "npm version minor",
     "version:patch": "npm version patch",
     "postversion": "npm publish && git push && git push --tags",
-    "test": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
+    "test": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
+    "mocha:test": "mocha test"
   },
   "repository": {
     "type": "git",
