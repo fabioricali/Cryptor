@@ -1,6 +1,6 @@
 {
   "name": "cryptorjs",
-  "version": "2.1.0",
+  "version": "3.0.0",
   "description": "Encrypt and decrypt string, number and object using a key",
   "main": "index.js",
   "directories": {
